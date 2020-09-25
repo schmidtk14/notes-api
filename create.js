@@ -20,10 +20,8 @@ export const main = handler(async (event, context) => {
         content: data.content,
         attachment: data.attachment,
         createdAt: Date.now()
-    }
+        }
     };
-
     await dynamoDb.put(params);
-
-    return params.Item;   
+    return params.Item;
 });
